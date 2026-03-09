@@ -110,7 +110,7 @@ export default function ImagePreview({ src, alt, caption, className = '', childr
                   alt={alt}
                   className="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl"
                   style={{ 
-                    imageRendering: 'high-quality',
+                    imageRendering: 'auto',ss
                     WebkitUserSelect: 'none',
                     userSelect: 'none'
                   }}
