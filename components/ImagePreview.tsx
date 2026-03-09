@@ -18,18 +18,16 @@ export default function ImagePreview({ src, alt, caption, className = '', childr
 
   // ESC 键关闭
   useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setIsOpen(false)
-    }
     if (isOpen) {
-      window.addEventListener('keydown', handleEsc)
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
     }
+  
     return () => {
-      window.removeEventListener('keydown', handleEsc)
-      document.body.style.overflow = 'unset'
-    }
-  }, [isOpen])
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   return (
     <>
@@ -110,7 +108,7 @@ export default function ImagePreview({ src, alt, caption, className = '', childr
                   alt={alt}
                   className="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl"
                   style={{ 
-                    imageRendering: 'auto',ss
+                    imageRendering: 'auto',
                     WebkitUserSelect: 'none',
                     userSelect: 'none'
                   }}
